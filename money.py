@@ -27,6 +27,11 @@ class Money:
             obj3.paise %= 100
         return obj3
 
+    def __sub__(self, obj2):
+        obj3 = Money()
+        obj3.rupee = self.rupee - obj2.rupee
+        obj3.paise = self.paise - obj2.paise
+        return obj3
 
     def __str__(self):
         if self.rupee < 0 and self.paise <= 0:

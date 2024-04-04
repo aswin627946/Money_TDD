@@ -12,6 +12,12 @@ class TestMoney(unittest.TestCase):
         obj1 = Money(34.31)
         obj3 = obj1 * 3
         self.assertEqual(str(obj3), "102 rupees, 93 paise.\n")
+    
+    def test_subtraction(self):
+        obj1 = Money(34.31)
+        obj2 = Money(45.29)
+        obj3 = obj1 - obj2
+        self.assertEqual(str(obj3), "UnderFlow\n\n")
 
 
 if __name__ == "__main__":
