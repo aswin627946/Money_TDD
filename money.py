@@ -1,7 +1,11 @@
 class Money:
     def __init__(self, x=0):
-        self.rupee = int(x)
-        self.paise = int((x - int(x)) * 100)
+        parts = str(x).split('.')
+        self.rupee = int(parts[0])
+        if len(parts) > 1:
+            self.paise = int(parts[1][:2]) if len(parts[1]) >= 2 else 0
+        else:
+            self.paise = 0
 
     def __add__(self, obj2):
         obj3 = Money()
