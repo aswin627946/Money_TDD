@@ -16,6 +16,16 @@ class Money:
             obj3.rupee += (obj3.paise - remainder) // 100
             obj3.paise %= 100
         return obj3
+    
+    def __mul__(self, x):
+        obj3 = Money()
+        obj3.rupee = self.rupee * x
+        obj3.paise = self.paise * x
+        if obj3.paise >= 100:
+            remainder = obj3.paise % 100
+            obj3.rupee += (obj3.paise - remainder) // 100
+            obj3.paise %= 100
+        return obj3
 
 
     def __str__(self):
