@@ -38,6 +38,15 @@ class Money:
         obj3.rupee = self.rupee // x
         obj3.paise = round(self.paise / x)
         return obj3
+    
+    def __eq__(self, obj2):
+        return self.rupee == obj2.rupee and self.paise == obj2.paise
+
+    def __lt__(self, obj2):
+        return (self.rupee, self.paise) < (obj2.rupee, obj2.paise)
+
+    def __gt__(self, obj2):
+        return (self.rupee, self.paise) > (obj2.rupee, obj2.paise)
 
     def __str__(self):
         if self.rupee < 0 and self.paise <= 0 or self.rupee < 0:

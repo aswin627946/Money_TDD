@@ -23,6 +23,15 @@ class TestMoney(unittest.TestCase):
         obj1 = Money(34.31)
         obj3 = obj1 / 2
         self.assertEqual(str(obj3), "17 rupees, 16 paise.\n")
+    
+    def __eq__(self, obj2):
+        return self.rupee == obj2.rupee and self.paise == obj2.paise
+
+    def __lt__(self, obj2):
+        return (self.rupee, self.paise) < (obj2.rupee, obj2.paise)
+
+    def __gt__(self, obj2):
+        return (self.rupee, self.paise) > (obj2.rupee, obj2.paise)
 
 
 if __name__ == "__main__":
