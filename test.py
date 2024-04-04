@@ -18,6 +18,11 @@ class TestMoney(unittest.TestCase):
         obj2 = Money(45.29)
         obj3 = obj1 - obj2
         self.assertEqual(str(obj3), "UnderFlow\n\n")
+    
+    def test_division(self):
+        obj1 = Money(34.31)
+        obj3 = obj1 / 2
+        self.assertEqual(str(obj3), "17 rupees, 16 paise.\n")
 
 
 if __name__ == "__main__":
