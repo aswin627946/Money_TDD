@@ -34,7 +34,7 @@ class Money:
         return obj3
 
     def __str__(self):
-        if self.rupee < 0 and self.paise <= 0:
+        if self.rupee < 0 and self.paise <= 0 or self.rupee < 0:
             return "UnderFlow\n\n"
         return f"{self.rupee} rupees, {self.paise} paise.\n"
 
